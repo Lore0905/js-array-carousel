@@ -31,12 +31,23 @@
     width: 100%;
     height: 100%;
     display: none;
+    position: relative;
 }
 .single-principal-img > img{
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+}
+/* text-img */
+.single-img-text{
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    font-size: 12px;
+    padding: 5px 20px;
 }
 
 /* ACTIVE */
@@ -46,6 +57,7 @@
 .single-thumbs.active{
     filter: grayscale(0);
 }
+
 
 /* THUMBS */
 .single-thumbs{
