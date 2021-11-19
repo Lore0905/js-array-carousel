@@ -30,19 +30,24 @@ const containerThumbs = document.querySelector('.container_thumbs');
 for ( let i = 0; i < items.length; i++){
 
     const totalItems = items[i];
+    const totalTitle = title[i];
+    const totalText = text[i];
 
     // CONTAINER PRINCIPLA IMG
     // inserisco tutte le immagini sull'HTML
 
     let singleImg = 
     `
-    <div class="single-principal-img">
+    <div class="single-principal-img ">
         <img src="../consegna/${totalItems}" alt="${totalItems}">
+        <div class="single-img-text">
+            <h2>${totalTitle}</h2>
+            <p>${totalText}</p>
+        </div>
     </div>
     `
     
     containerImg.innerHTML += singleImg;
-    console.log(singleImg);
 
 
 
@@ -71,9 +76,31 @@ const allThumbs = document.getElementsByClassName('single-thumbs');
 allImg[activeImage].classList.add('active');
 allThumbs[activeImage].classList.add('active');
 
-// al click (arrow up) tolgo la classe active 
+// al click (ARROW UP) tolgo la classe active 
 
-const upArrow = document.querySelector('.arrow-down');
+const downArrow = document.querySelector('.arrow-down');
+
+downArrow.addEventListener('click',
+    function (){
+        allImg[activeImage].classList.remove('active');
+        allThumbs[activeImage].classList.remove('active');
+    
+    if(activeImage < items.length -1) {
+        activeImage++;
+    }
+    else{
+        activeImage = 0;
+    }
+
+    // assegnare all'immagine col nouvo indice la classe active
+    allImg[activeImage].classList.add('active');
+    allThumbs[activeImage].classList.add('active');
+
+});
+
+// al click (ARROW UP) tolgo la classe active 
+
+const upArrow = document.querySelector('.arrow-up');
 
 upArrow.addEventListener('click',
     function (){
@@ -81,7 +108,7 @@ upArrow.addEventListener('click',
         allThumbs[activeImage].classList.remove('active');
     
     if(activeImage < items.length -1) {
-        activeImage++;
+        activeImage--;
     }
     else{
         activeImage = 0;

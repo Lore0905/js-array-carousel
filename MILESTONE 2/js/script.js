@@ -30,19 +30,24 @@ const containerThumbs = document.querySelector('.container_thumbs');
 for ( let i = 0; i < items.length; i++){
 
     const totalItems = items[i];
+    const totalTitle = title[i];
+    const totalText = text[i];
 
     // CONTAINER PRINCIPLA IMG
     // inserisco tutte le immagini sull'HTML
 
     let singleImg = 
     `
-    <div class="single-principal-img">
+    <div class="single-principal-img ">
         <img src="../consegna/${totalItems}" alt="${totalItems}">
+        <div class="single-img-text">
+            <h2>${totalTitle}</h2>
+            <p>${totalText}</p>
+        </div>
     </div>
     `
     
     containerImg.innerHTML += singleImg;
-    console.log(singleImg);
 
 
 
