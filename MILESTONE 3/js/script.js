@@ -69,16 +69,26 @@ const allImg = document.getElementsByClassName('single-principal-img');
 const allThumbs = document.getElementsByClassName('single-thumbs');
 
 allImg[activeImage].classList.add('active');
+allThumbs[activeImage].classList.add('active');
 
 // al click (arrow up) tolgo la classe active 
 
 const upArrow = document.querySelector('.arrow-down');
-console.log(upArrow);
 
 upArrow.addEventListener('click',
     function (){
         allImg[activeImage].classList.remove('active');
-    }
-if ( activeImage < items.length -1 ) {
+        allThumbs[activeImage].classList.remove('active');
     
-}
+    if(activeImage < items.length -1) {
+        activeImage++;
+    }
+    else{
+        activeImage = 0;
+    }
+
+    // assegnare all'immagine col nouvo indice la classe active
+    allImg[activeImage].classList.add('active');
+    allThumbs[activeImage].classList.add('active');
+
+});
