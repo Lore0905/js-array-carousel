@@ -60,7 +60,7 @@ for ( let i = 0; i < items.length; i++){
     `
     <div class="single-thumbs">
         <img src="../consegna/${totalItems}" alt="${totalItems}">
-    </div>
+    </div>   
     `
     
     containerThumbs.innerHTML += singleThumbs;
