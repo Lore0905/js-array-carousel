@@ -107,11 +107,11 @@ upArrow.addEventListener('click',
         allImg[activeImage].classList.remove('active');
         allThumbs[activeImage].classList.remove('active');
     
-    if(activeImage < items.length -1) {
+    if(activeImage !== 0 ) {
         activeImage--;
     }
     else{
-        activeImage = 0;
+        activeImage = items.length -1;
     }
 
     // assegnare all'immagine col nouvo indice la classe active
